@@ -1,0 +1,8 @@
+<div id="global-search">
+	<%= form_tag do %>
+	<p>
+		<%= label_tag :search_term,"I'm looking for :" %> <%= text_field_tag :search_term, nil, :size => 40, :class => "search-input" %>
+		<%= submit_tag "Search !",:class => "submit"%>
+	</p>
+	<% end %>
+</div>

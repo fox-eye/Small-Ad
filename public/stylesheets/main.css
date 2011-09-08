@@ -1,0 +1,96 @@
+body{
+	font-weight: 90%;
+	font-family: Verdana,sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #D2E8E8;
+}
+
+h1,h2,h3{
+	margin: 0;
+}
+
+#wrap{
+	width: 980px;
+	margin: 20px auto 0 auto;
+}
+
+/* generic styles */
+
+nav ul{
+	list-style: none;
+}
+
+nav ul li{
+	display: inline-block;
+}
+
+p{
+	font-size: 1em;
+}
+
+/* header */
+header{
+	border: 2px solid #347454;
+	background-color: white;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	padding: 0.2em;
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px#888;
+	box-shadow: 0 0 5px #888;
+}
+#global-content{
+	padding: 1em;
+	border-top: 1px dashed grey;
+}
+#global-content h1{
+	font-size: 1.4em;
+}
+
+#global-content p{
+	font-size: 0.9em;
+}
+/* SEARCH */
+#global-search .search-input {
+	width: 30em;
+	border: 1px solid #347454;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	font-weight: bold;
+	font-size: 1.2em;
+	padding: 0.3em;
+}
+
+#global-search label {
+	font-weight: bold;
+}
+
+#global-search .submit{
+	background-color: #65375D;
+	border: 1px solid #65375D;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	font-size: 1em;
+	color: white;
+	padding: 0.4em;	
+}
+
+/* footer */
+footer{
+	border-top: 1px dashed grey;
+	text-align: center;
+}
+
+footer #footer-nav li{
+	font-size: 0.8em;
+	margin: 0px 0.5em;
+}
+
+footer #credits{
+	font-size: 0.7em;
+	background: #65375D;
+	color: white;
+	padding: 0.7em;
+}

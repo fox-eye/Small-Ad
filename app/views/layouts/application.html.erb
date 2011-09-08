@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SmallAd</title>
-  <%= stylesheet_link_tag :all %>
+  <title><%= title %></title>
+  <%= stylesheet_link_tag "main","screen" %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
-
+	<div id="wrap">
+		<%= render 'layouts/header' %>
+		
+		<%= render 'layouts/search' %>
+		
+		<section id="global-content">
+			<%= yield %>
+		</section>	
+		
+		<%= render 'layouts/footer' %>
+	</div>
 </body>
 </html>

@@ -1,4 +1,9 @@
 SmallAd::Application.routes.draw do
+  get "pages/about"
+
+  get "pages/terms"
+  
+  root :to => "pages#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
