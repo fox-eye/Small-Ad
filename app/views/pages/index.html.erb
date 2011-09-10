@@ -1,2 +1,19 @@
 <h1>Welcome to small ad</h1>
-<p>Small ad is a simple small ad search tool for buying and selling things.</p>
+
+<%= render "shared/flash", :flash => flash %>
+
+<% if !flash[:success].nil? %>
+	<p>You can now <%= link_to "add some small ads","#" %> !</p>
+<% end %>
+
+<section id="intro">
+	<p>Small ad is a simple small ad search tool for buying and selling things.</p>
+</section>
+
+<section id="signup_box">
+	<p>If your are not member again... why don't you sign up ? It's <strong>free</strong> !</p>
+	<div id="signup_btn"><%= link_to "Go sign up !",signup_path, :class => "round_btn" %></div>
+</section>
+
+
+

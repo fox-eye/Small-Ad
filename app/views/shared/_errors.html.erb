@@ -1,0 +1,16 @@
+<section id="errors-box">
+	<% if object.errors.any? %>
+	<header>
+		<h1>Be careful, you have <%= pluralize(object.errors.count,"error") %> :</h1>
+	</header>
+	
+	<section id="errors-list">
+		<ul>
+		<% object.errors.full_messages.each do |error| %>
+			<li><%= error %></li>		
+		<% end %>
+		</ul>
+	</section>
+		
+	<% end %>	
+</section>

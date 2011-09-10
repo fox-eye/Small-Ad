@@ -27,10 +27,30 @@ nav ul li{
 
 p{
 	font-size: 1em;
+	margin: 0.9em 0;
 }
 
+ul li {
+	font-size: 1em;
+}
+
+
+/* btns */
+.round_btn{
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	box-shadow: 0 0 3px #888;
+	-moz-box-shadow: 0 0 3px #888;
+	-moz-box-shadow: 0 0 3px #888;
+	background-color: #C6FEA8;
+	text-decoration: none;
+	color: black;
+}
+
+
 /* header */
-header{
+#wrap header#main{
 	border: 2px solid #347454;
 	background-color: white;
 	-moz-border-radius: 10px;
@@ -43,7 +63,7 @@ header{
 }
 #global-content{
 	padding: 1em;
-	border-top: 1px dashed grey;
+	border-top: 1px dashed #666666;
 }
 #global-content h1{
 	font-size: 1.4em;
@@ -79,7 +99,7 @@ header{
 
 /* footer */
 footer{
-	border-top: 1px dashed grey;
+	border-top: 1px dashed #666666;
 	text-align: center;
 }
 
@@ -93,4 +113,98 @@ footer #credits{
 	background: #65375D;
 	color: white;
 	padding: 0.7em;
+}
+
+/* flash */ 
+#flash_msg{
+	margin-bottom: 1em;
+	border: 1px dashed #666666;
+}
+
+.success{
+	background-color: #C6FEA8;
+	padding: 1em;
+	font-weight: bold;
+}
+
+.error{
+	background-color: #FF4444;
+}
+
+/* sign up */
+
+#signup_box{
+	margin-top: 2em;
+	border: 1px dashed #666666;
+	padding: 0.8em;
+}
+
+#signup_btn{
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#signup_btn a{
+	padding: 0.8em;
+}
+
+#signup_btn a:hover{
+	background-color: #65375D;
+	color: white;
+}
+
+/* form fields */
+.field{
+	margin: 1em 0em;
+}
+
+.field input{
+	font-weight: bold;
+}
+
+.field label{
+	color: #347454;
+}
+
+/* validations */
+#errors-box{
+	border: 1px dashed #666666;
+	margin-bottom: 1em;
+}
+
+#errors-box header{
+	background-color: #FF4444;
+	color: white;
+	padding: 0.9em;
+}
+
+#errors-box header h1{
+	font-size: 1em;
+	margin: 0;
+}
+
+#errors-box ul{
+	list-style: none;
+	color: #65375D;
+	font-weight: bold;
+	padding: 0.3em;
+	margin: 0.3em;
+}
+
+#errors-box ul li{
+	padding: 0.4em 0;
+	font-size: 0.7em;
+}
+
+.field_with_errors{
+	
+}
+
+.field_with_errors input{
+	background-color: #FF4444;
+}
+
+.field_with_errors label{
+	font-weight: bold;
+	font-size: 1em;
 }

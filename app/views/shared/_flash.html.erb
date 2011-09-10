@@ -1,0 +1,7 @@
+<% if(flash.any?)%>
+	<section id="flash_msg">
+		<% flash.each do |type,value| %>
+			<div class="flash <%= type %>"><%= value %></div>
+		<% end %>
+	</section>
+<% end %>

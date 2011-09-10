@@ -28,6 +28,11 @@ describe PagesController do
       response.should have_selector("#global-search")
     end
     
+    it "should have a signup button" do
+      get "index"
+      response.should have_selector("#signup_btn a",:href => signup_path, :content => "Go sign up !")
+    end
+    
   end
 
   describe "GET 'about'" do
