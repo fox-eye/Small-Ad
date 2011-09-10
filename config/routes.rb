@@ -1,4 +1,6 @@
 SmallAd::Application.routes.draw do
+  get "pages/index"
+
   get "pages/about"
 
   get "pages/terms"

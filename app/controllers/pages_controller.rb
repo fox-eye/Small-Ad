@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @title = "Welcome, go search for small ads!"
+    @title = "search for small ads with tiny efforts"
   end
 
   def about
