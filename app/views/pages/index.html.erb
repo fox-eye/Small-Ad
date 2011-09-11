@@ -2,7 +2,7 @@
 
 <%= render "shared/flash", :flash => flash %>
 
-<% if !flash[:success].nil? %>
+<% if !flash[:success].nil? && !signed_in? %>
 	<p>You can now <%= link_to "add some small ads","#" %> !</p>
 <% end %>
 

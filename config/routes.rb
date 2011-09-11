@@ -10,6 +10,7 @@ SmallAd::Application.routes.draw do
   match "/terms" => "pages#terms"
   match "/signup" => "users#new"
   match "/signin" => "sessions#new"
+  match "/logout" => "sessions#destroy"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

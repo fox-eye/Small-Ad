@@ -2,4 +2,14 @@
 	<div id="logo">
 		<%= link_to  image_tag("logo.png",:alt => "Small ad"), root_path %>
 	</div>
+	
+	<% if signed_in? %>
+	<nav id="logged-user-menu">
+		<ul>
+			<li><%= link_to "Add a small ad", '#' %></li>
+			<li><%= link_to "edit ads", '#' %></li>
+			<li><%= link_to "logout", logout_path %></li>
+		</ul>
+	</nav>
+	<% end %>
 </header>
