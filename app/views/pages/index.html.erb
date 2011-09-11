@@ -6,6 +6,7 @@
 	<p>You can now <%= link_to "add some small ads","#" %> !</p>
 <% end %>
 
+<% if(!signed_in?) %>
 <section id="intro">
 	<p>Small ad is a simple small ad search tool for buying and selling things.</p>
 </section>
@@ -13,7 +14,11 @@
 <section id="signup_box">
 	<p>If your are not member again... why don't you sign up ? It's <strong>free</strong> !</p>
 	<div id="signup_btn"><%= link_to "Go sign up !",signup_path, :class => "round_btn" %></div>
+	<p>Already signed up ? </p>
+	<div id="signin_btn"><%= link_to "Sign in !",signin_path, :class => "round_btn" %></div>
 </section>
-
+<% else %>
+	<p>Hello <strong><%= current_user.firstname %> <%= current_user.lastname%> !</strong> You are connected !</p>
+<% end %>
 
 

@@ -47,6 +47,11 @@ ul li {
 	color: black;
 }
 
+.round_btn:hover{
+	background-color: #65375D;
+	color: white;
+}
+
 
 /* header */
 #wrap header#main{
@@ -130,7 +135,7 @@ footer #credits{
 	background-color: #FF4444;
 }
 
-/* sign up */
+/* sign up - sign in */
 
 #signup_box{
 	margin-top: 2em;
@@ -138,18 +143,13 @@ footer #credits{
 	padding: 0.8em;
 }
 
-#signup_btn{
+#signup_btn, #signin_btn{
 	margin-top: 1em;
 	margin-bottom: 1em;
 }
 
-#signup_btn a{
+#signup_btn a, #signin_btn a{
 	padding: 0.8em;
-}
-
-#signup_btn a:hover{
-	background-color: #65375D;
-	color: white;
 }
 
 /* form fields */

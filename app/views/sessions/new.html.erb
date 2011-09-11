@@ -1,0 +1,21 @@
+<h1>Please sign-in</h1>
+<p>Enter your login / password </p>
+
+<%= render "shared/flash", :flash => flash %>
+
+<%= form_for :session, :url => sessions_path do |f| %>
+	<div class="field">
+		<%= f.label :email, "Your email address"%><br />
+		<%= f.text_field :email %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :password, "Your password"%><br />
+		<%= f.password_field :password %>
+	</div>
+	
+	<div id="actions">
+		<%= f.submit ("sign in !")%>
+	</div>
+			
+<% end %>

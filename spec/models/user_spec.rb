@@ -99,6 +99,35 @@ describe User do
     
   end
   
+  describe "authenticate method" do
+  
+    it "should exist" do
+      User.should respond_to(:authenticate)
+    end
+    
+    it "should return nil login/password are wrong" do
+      User.authenticate(@attr[:email],"blalbablo").should be_nil
+    end
+    
+    it "should return nil if password is missing" do
+       User.authenticate(@attr[:email],"").should be_nil
+    end
+    
+    it "should return nil if email is missing" do
+       User.authenticate("",@attr[:password]).should be_nil
+    end
+    
+    describe "success" do
+      before(:each) do
+         @user = User.create!(@attr)
+      end
+      it "should return user if login / password are ok" do
+        User.authenticate(@attr[:email],@attr[:password]).should == @user
+      end
+      
+    end     
+  end
+  
 end
 
 # == Schema Information
