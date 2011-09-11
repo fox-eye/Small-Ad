@@ -13,7 +13,18 @@ class User < ActiveRecord::Base
   validates :email, 
                   :presence => true, 
                   :format => {:with => email_regex},
-                  :uniqueness => {:case_sensitive => false}      
+                  :uniqueness => {:case_sensitive => false}
+                  
+  before_save :encrypt_password
+  
+  private
+    def encrypt_password
+      if password.present? && new_record?
+        self.password_salt = BCrypt::Engine.generate_salt
+      end
+      
+        self.password_hash = BCrypt::Engine.hash_secret(password,password_salt)
+    end
 end
 
 # == Schema Information

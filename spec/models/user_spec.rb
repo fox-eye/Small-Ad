@@ -8,6 +8,7 @@ describe User do
               :lastname => "Romano",
               :email => "romano.lucas@gmail.com",
               :password => "pass123",
+              :password_confirmation => "pass123",
               :city => "Etterbeek"
             }
   end
@@ -82,6 +83,22 @@ describe User do
       @user.should respond_to :password_confirmation
     end
   end
+  
+  describe "password encryption" do
+    before(:each) do
+      @user = User.create!(@attr)
+    end
+    
+    it "should generate a salt" do
+      @user.password_salt.should_not be_blank
+    end
+    
+    it "should generate a password_hash" do
+      @user.password_hash.should_not be_blank
+    end
+    
+  end
+  
 end
 
 # == Schema Information

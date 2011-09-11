@@ -1,14 +1,12 @@
 SmallAd::Application.routes.draw do
   get "pages/index"
-
-  get "pages/about"
-
-  get "pages/terms"
   
   root :to => "pages#index"
   
   resource :users
   
+  match "/about" => "pages#about"
+  match "/terms" => "pages#terms"
   match "/signup" => "users#new"
   # The priority is based upon order of creation:
   # first created -> highest priority.
