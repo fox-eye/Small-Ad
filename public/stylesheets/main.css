@@ -9,6 +9,12 @@ h1,h2,h3{
 	margin: 0;
 }
 
+h1{
+	color: #347454;
+	font-weight : normal;
+	text-transform: uppercase;
+}
+
 #wrap{
 	width: 980px;
 	margin: 20px auto 0 auto;
@@ -39,17 +45,13 @@ ul li {
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
-	box-shadow: 0 0 3px #888;
-	-moz-box-shadow: 0 0 3px #888;
-	-moz-box-shadow: 0 0 3px #888;
-	background-color: #C6FEA8;
+	background-color: #347454;
 	text-decoration: none;
-	color: black;
+	color: #FFFFFF;
 }
 
 .round_btn:hover{
 	background-color: #65375D;
-	color: white;
 }
 
 
@@ -75,6 +77,7 @@ ul li {
 #global-content{
 	padding: 1em;
 	border-top: 1px dashed #666666;
+	margin-top: 2em;
 }
 #global-content h1{
 	font-size: 1.4em;
@@ -109,10 +112,20 @@ ul li {
 	padding: 0.4em;	
 }
 
+#global-search #search_term{
+	width: 760px;
+}
+
 /* footer */
 footer{
-	border-top: 1px dashed #666666;
 	text-align: center;
+	font-size: 0.7em;
+	margin-top: 1.2em;
+}
+
+footer #footer-nav ul{
+	margin: 0;
+	padding: 0;
 }
 
 footer #footer-nav li{
@@ -120,13 +133,19 @@ footer #footer-nav li{
 	margin: 0px 0.5em;
 }
 
-footer #credits{
-	font-size: 0.7em;
-	background: #65375D;
-	color: white;
-	padding: 0.7em;
+footer #footer-nav a{
+	color: #65375D;
 }
 
+footer #credits{
+	background: #65375D;
+	color: white;
+	padding: 0.3em;
+	margin-bottom: 0.6em;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
 /* flash */ 
 #flash_msg{
 	margin-bottom: 1em;
@@ -147,7 +166,8 @@ footer #credits{
 
 #signup_box{
 	margin-top: 2em;
-	border: 1px dashed #666666;
+	border-top: 1px solid #666666;
+	border-bottom: 1px solid #666666;
 	padding: 0.8em;
 }
 
@@ -157,7 +177,7 @@ footer #credits{
 }
 
 #signup_btn a, #signin_btn a{
-	padding: 0.8em;
+	padding: 0.5em;
 }
 
 /* form fields */
