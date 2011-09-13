@@ -1,29 +1,5 @@
 SmallAd::Application.routes.draw do
-  get "ads/index"
-
-  get "ads/show"
-
-  get "ads/create"
-
-  get "ads/destroy"
-
-  get "ads/search"
-
-  get "ads/edit"
-
-  get "ads/update"
-
-  get "index/show"
-
-  get "index/create"
-
-  get "index/destroy"
-
-  get "index/search"
-
-  get "index/edit"
-
-  get "index/update"
+  resource :ads
 
   get "categories/show"
 
@@ -38,9 +14,14 @@ SmallAd::Application.routes.draw do
   
   match "/about" => "pages#about"
   match "/terms" => "pages#terms"
+ 
   match "/signup" => "users#new"
   match "/signin" => "sessions#new"
   match "/logout" => "sessions#destroy"
+ 
+  match "/my-ads" => "ads#index", :as => :my_ads
+  
+  match "json/get_sub_cat/:id" => "categories#get_sub_cat"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

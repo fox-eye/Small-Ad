@@ -1,6 +1,12 @@
 class Ad < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
+  
+  attr_accessible :title, :description, :price
+  
+  validates :title, :presence => true
+  validates :description, :presence => true
+  validates :price, :presence => true, :numericality => true
 end
 
 # == Schema Information

@@ -6,9 +6,8 @@
 	<% if signed_in? %>
 	<nav id="logged-user-menu">
 		<ul>
-			<li><%= link_to "Add a small ad", '#' %></li>
-			<li><%= link_to "edit ads", '#' %></li>
-			<li><%= link_to "logout", logout_path %></li>
+			<li><%= link_to "My ads", my_ads_path, :class => "round_btn" %></li>
+			<li><%= link_to "Logout", logout_path, :class => "round_btn" %></li>
 		</ul>
 	</nav>
 	<% end %>

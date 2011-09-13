@@ -1,0 +1,9 @@
+<nav id="admin-menu">
+	<ul>	
+		<li><%= link_to "Add a new small ad", new_ads_path, :class => "round_btn" %></li>
+	
+		<% if request.path != "/my-ads" %>
+		<li><%= link_to "Back to index page", my_ads_path, :class => "round_btn" %></li>
+		<% end %>
+	</ul>
+</nav>
