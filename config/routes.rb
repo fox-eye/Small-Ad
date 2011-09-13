@@ -1,4 +1,34 @@
 SmallAd::Application.routes.draw do
+  get "ads/index"
+
+  get "ads/show"
+
+  get "ads/create"
+
+  get "ads/destroy"
+
+  get "ads/search"
+
+  get "ads/edit"
+
+  get "ads/update"
+
+  get "index/show"
+
+  get "index/create"
+
+  get "index/destroy"
+
+  get "index/search"
+
+  get "index/edit"
+
+  get "index/update"
+
+  get "categories/show"
+
+  get "categories/get_sub_cat"
+
   get "pages/index"
   
   root :to => "pages#index"
