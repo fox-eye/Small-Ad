@@ -1,5 +1,21 @@
 $(function() {
-	
+		
+		// force float
+		$('.float-price').bind("blur",function(){
+			var value = $(this).val();
+			var isNumeric = /^[\d]+\.[\d]+$/;
+			if(!isNumeric.test(value)){
+				$(this).val(value.replace(/,/, "."));
+				
+			}
+		});
+		
+		// word counter in ad description
+		$('#ad_description').jqEasyCounter({
+			'maxChars': 250
+		});
+
+		
 		// Show subcategories dropdown for a specific root category
 		
 		$("#ad_root_cats_name").bind("change",function(e){

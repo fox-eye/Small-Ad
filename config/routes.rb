@@ -1,6 +1,4 @@
 SmallAd::Application.routes.draw do
-  resource :ads
-
   get "categories/show"
 
   get "categories/get_sub_cat"
@@ -9,8 +7,9 @@ SmallAd::Application.routes.draw do
   
   root :to => "pages#index"
    
-  resource :users
-  resource :sessions, :only => [:new, :create, :destroy]
+  resources :users
+  resources :ads
+  resources :sessions, :only => [:new, :create, :destroy]
   
   match "/about" => "pages#about"
   match "/terms" => "pages#terms"

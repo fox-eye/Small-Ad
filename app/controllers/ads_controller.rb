@@ -18,11 +18,18 @@ class AdsController < ApplicationController
   # create a new ad for current user
   def create
     @ad = current_user.ads.build(params[:ad])
-    @ad.save
-    render 'new'
+    @ad.category_id = params[:ad_sub_cats][:name]
+    if@ad.save
+      redirect_to my_ads_path, :flash => {:success => "Your new ad has been successfully created !"}
+    else
+      render 'new'
+    end 
+    
   end
 
   def destroy
+    Ad.find(params[:id]).destroy
+    redirect_to my_ads_path, :flash => {:success => "This ad has been destroyed !"}
   end
 
   def search

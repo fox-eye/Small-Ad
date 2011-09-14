@@ -227,14 +227,14 @@ footer #credits{
 }
 
 #errors-box header{
-	background-color: #FF4444;
-	color: white;
+	background-color: #d52b2b;
 	padding: 0.9em;
 }
 
 #errors-box header h1{
 	font-size: 1em;
 	margin: 0;
+	color: #FFFFFF;
 }
 
 #errors-box ul{
@@ -248,10 +248,13 @@ footer #credits{
 #errors-box ul li{
 	padding: 0.4em 0;
 	font-size: 0.7em;
+	color: #D52B2B;
 }
 
-.field_with_errors input{
-	background-color: #FF4444;
+.field_with_errors input, .field_with_errors textarea{
+	background-color: #d52b2b;
+	color: #FFFFFF;
+	border: 2px solid #FFFFFF;
 }
 
 .field_with_errors label{
@@ -279,3 +282,16 @@ footer #credits{
 	padding: 0.4em;
 }
 
+.admin-tab{
+	border-collapse: collapse;
+}
+
+.admin-tab th, .admin-tab td{
+	padding: 0.3em 1.8em;
+	border: 1px dashed #999999;
+}
+
+.admin-tab th {
+	background-color: #65375D;
+	color: #FFFFFF;
+}

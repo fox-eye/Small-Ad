@@ -2,34 +2,4 @@
 
 <%= render "admin_menu" %>
 
-<%= form_for @ad do |f| %>
-
-	<%= render 'shared/errors', :object => f.object %>
-	
-	<div class="field">
-		<%= f.label :title,"Title of your ad" %><br />
-		<%= f.text_field :title %>
-	</div>
-	
-	<div class="field">
-		<%= f.label :description,"Description (max 200 char)" %><br />
-		<%= f.text_area :description, :size => "50x6" %>
-	</div>
-	
-	<div class="field">
-		<%= f.label :root_cats, "Please choose a category and a subcategory to place your ad in" %> <br />
-		<%= select(:ad_root_cats, :name, @root_cat_options) %>
-		<%#= select_tag(:ad_sub_cats,'<option value="0">Please select first a root category</option>'.html_safe) %>
-		<%= select(:ad_sub_cats, :name, @sub_cat_options) %>
-	</div>	
-
-	<div class="field">
-		<%= f.label :price,"Price" %><br />
-		<%= f.text_field :price, :size => "7",:maxlength => 6 %>		
-	</div>
-	
-	<div class="actions">
-		<%= f.submit "Add!" %>
-	</div>
-
-<% end %>
+<%= render "form" %>

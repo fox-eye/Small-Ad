@@ -4,9 +4,9 @@ class Ad < ActiveRecord::Base
   
   attr_accessible :title, :description, :price
   
-  validates :title, :presence => true
-  validates :description, :presence => true
-  validates :price, :presence => true, :numericality => true
+  validates :title, :presence => true, :length => {:maximum => 60}
+  validates :description, :presence => true, :length => { :in => 10..250 }
+  validates :price, :presence => true, :numericality => {:greater_than => 0} 
 end
 
 # == Schema Information
