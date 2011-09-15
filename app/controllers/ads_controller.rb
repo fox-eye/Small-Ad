@@ -1,6 +1,7 @@
 class AdsController < ApplicationController
   
   before_filter :load_ad_cat_datas, :only => [:create,:new, :edit]
+  before_filter :authenticate, :except => [:show, :search]
   
   #show current user small ads
   def index
@@ -68,6 +69,10 @@ class AdsController < ApplicationController
     
     def get_sub_categories(from)
       @sub_cat_options = Category.find(from).children.map{|sub_cat|[sub_cat.name,sub_cat.id]}
+    end
+    
+    def authenticate
+      redirect_to(signin_path) unless current_user
     end
     
 end
