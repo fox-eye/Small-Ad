@@ -13,10 +13,9 @@
 	</div>
 	
 	<div class="field">
-		<%= f.label :root_cats, "Please choose a category and a subcategory to place your ad in" %> <br />
-		<%= select(:ad_root_cats, :name, @root_cat_options) %>
-		<%#= select_tag(:ad_sub_cats,'<option value="0">Please select first a root category</option>'.html_safe) %>
-		<%= select(:ad_sub_cats, :name, @sub_cat_options) %>
+		<%= f.label :category_id, "Please choose a category and a subcategory to place your ad in" %> <br />
+		<%= select_tag(:root_category,options_for_select(@root_cat_options,@selected_root_category)) %>
+		<%= f.select(:category_id, @sub_cat_options,:selected => @selected_sub_category) %>
 	</div>	
 
 	<div class="field">
@@ -25,7 +24,7 @@
 	</div>
 	
 	<div class="actions">
-		<%= f.submit "Add!" %>
+		<%= f.submit "Save" %>
 	</div>
 
 <% end %>

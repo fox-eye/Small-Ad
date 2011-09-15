@@ -1,6 +1,6 @@
 class AdsController < ApplicationController
   
-  before_filter :load_ad_cat_datas, :only => [:create,:new]
+  before_filter :load_ad_cat_datas, :only => [:create,:new, :edit]
   
   #show current user small ads
   def index
@@ -18,7 +18,10 @@ class AdsController < ApplicationController
   # create a new ad for current user
   def create
     @ad = current_user.ads.build(params[:ad])
-    @ad.category_id = params[:ad_sub_cats][:name]
+    @selected_root_category = params[:root_category]
+    @selected_sub_category = params[:ad][:category_id]
+    get_sub_categories(@selected_root_category)
+       
     if@ad.save
       redirect_to my_ads_path, :flash => {:success => "Your new ad has been successfully created !"}
     else
@@ -34,20 +37,37 @@ class AdsController < ApplicationController
 
   def search
   end
-
+  
+  # edit the small ad
   def edit
+    @ad = Ad.find(params[:id])
+    @selected_root_category = @ad.category.parent_id
+    @selected_sub_category = @ad.category_id
+    get_sub_categories(@selected_root_category)
   end
-
+  
   def update
+    @ad = Ad.find(params[:id])
+    if @ad.update_attributes(params[:ad])
+      redirect_to my_ads_path, :flash => {:success => "Your new ad has been successfully modified !"}
+    else
+      render 'new'
+    end 
   end
   
   private 
+    # preload all common data neeeded for create / new / edit actions
     def load_ad_cat_datas
       # load main categories
-      @ad_root_cats = Category.roots.order(:name)           
+      @ad_root_cats = Category.roots.order(:name)        
       @root_cat_options = @ad_root_cats.map{|root| [root.name,root.id]}
     
       # load subcategories
-      @sub_cat_options = Category.children_of(@ad_root_cats.first).map{|sub_cat|[sub_cat.name,sub_cat.id]}
+      get_sub_categories(@ad_root_cats.first)
     end
+    
+    def get_sub_categories(from)
+      @sub_cat_options = Category.find(from).children.map{|sub_cat|[sub_cat.name,sub_cat.id]}
+    end
+    
 end

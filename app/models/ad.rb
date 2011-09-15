@@ -2,7 +2,7 @@ class Ad < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
   
-  attr_accessible :title, :description, :price
+  attr_accessible :title, :description, :price, :category_id
   
   validates :title, :presence => true, :length => {:maximum => 60}
   validates :description, :presence => true, :length => { :in => 10..250 }
