@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'will_paginate'
 gem 'ancestry'
 gem "bcrypt-ruby", :require => "bcrypt"
+gem "paperclip", "~> 2.4"
 
 group :development do
   gem 'rspec-rails','2.0.0.beta.18'

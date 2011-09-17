@@ -1,4 +1,4 @@
-<%= form_for @ad do |f| %>
+<%= form_for @ad, :html => {:multipart => true} do |f| %>
 
 	<%= render 'shared/errors', :object => f.object %>
 	
@@ -23,8 +23,24 @@
 		<%= f.text_field :price, :size => "7",:maxlength => 6, :class => "float-price" %> &euro;		
 	</div>
 	
+	<div class="field">
+		<%= f.label :photo, "Add a picture of your product (if you want)" %><br />
+		<%= f.file_field :photo %>
+	</div>
+	
+	<% if !@ad.new_record? %>
+		<%= admin_show_ad_img :thumb %>
+	<% end %>
+	
+	<section class="tip">
+		<p>Image is optional and should not exceed 5 megabytes. It should be a jpeg file (.jpg / .jpeg)</p>
+	</section>
+	
 	<div class="actions">
 		<%= f.submit "Save" %>
 	</div>
 
 <% end %>
+
+<p>* These fields are mandatory</p>
+

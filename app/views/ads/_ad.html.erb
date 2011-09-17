@@ -1,5 +1,5 @@
 <tr>
-<td>-- PIC -- </td>
+<td><%= image_tag(ad.photo.url :thumb) %></td>
 <td><%= ad.title %></td>
 <td><%= link_to "edit", edit_ad_path(ad) %></td>
 <td><%= link_to "delete", ad_path(ad), :method => :delete, :confirm => 'Are you sure?' %></td>
