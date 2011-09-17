@@ -15,7 +15,7 @@ def random_in_range(min,max)
   arr.at(rand(arr.length))
 end
 
-def rand_sub_cat
+def rand_sub_cat(hash)
   pos = rand(hash.size)
   key = hash.keys[pos]
   hash[key]
@@ -38,12 +38,21 @@ categories.each do |category_name,subcat|
   end
 end
 
+# ad a main user
+  user = User.create!({:firstname => "Romano",
+               :lastname => "Lucas",
+               :email => "romano.lucas@gmail.com",
+               :city => "Etterbeek",
+               :password => "petmagik",
+               :password_confirmation => "petmagik"
+              })
+
 # ad some users and their ads
 15.times do
    
   # créer un nouvel utilisateur
-  user = User.create({:first_name => Faker::Name::first_name,
-               :last_name => Faker::Name::last_name,
+  user = User.create!({:firstname => Faker::Name::first_name,
+               :lastname => Faker::Name::last_name,
                :email => Faker::Internet::email,
                :city => Faker::Address::city,
                :password => "test123",
@@ -59,14 +68,13 @@ end
     # trouver l'id de la sous catégorie
     subcategory_id = Category.find_by_name(subcategory_name)
     
-    ad = user.ads.build({
-                    :title => Faker::Lorem.words(random_in_range(4,10)),
-                    :description => Faker::Lorem.sentences(random_in_range(1,4)),
-                    :price => random_in_range(10,250)
-                  })
-                  
-    ad.category_id = subcategory_id
+    ad_params = {
+              :title => Faker::Lorem.words(random_in_range(2,5)).join(" "),
+              :description => Faker::Lorem.sentences(random_in_range(2,4)).join("."),
+              :price => random_in_range(10,250).to_f,
+              :category_id => subcategory_id
+             }
     
-    ad.save
+    user.ads.create!(ad_params)               
   end
 end
