@@ -5,7 +5,7 @@
 	<%= image_tag(ad.photo.url :thumb) %>
 	<section class="content">
 		<%= sanitize(truncate(ad.description, :length => 30)) %>
-		<strong><%= number_to_currency(ad.price, :unit => "&euro;", :locale => :fr,:format => "%n %u") %></strong>
-		<%= link_to("See details", "#") %>
+		<strong><%= format_price(ad.price) %></strong>
+		<%= link_to("See details", ad_path(ad)) %>
 	</section>
 </article>

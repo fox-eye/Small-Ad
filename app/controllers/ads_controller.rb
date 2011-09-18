@@ -15,6 +15,7 @@ class AdsController < ApplicationController
   end
   
   def show
+    @ad = Ad.find(params[:id])
   end
   
   # create a new ad for current user

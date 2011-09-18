@@ -10,4 +10,8 @@ module AdsHelper
       image_tag(ad.photo.url(type))
     end
   end
+  
+  def format_price(amount)
+    number_to_currency(amount, :unit => "&euro;", :locale => :fr,:format => "%n %u")
+  end
 end

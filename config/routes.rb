@@ -8,7 +8,7 @@ SmallAd::Application.routes.draw do
   root :to => "pages#index"
    
   resources :users
-  resources :ads, :except => :show
+  resources :ads
   
   resources :sessions, :only => [:new, :create, :destroy]
   

@@ -1,2 +1,20 @@
-<h1>Ads#show</h1>
-<p>Find me in app/views/ads/show.html.erb</p>
+<section id="ad-details">
+	<header>
+		<h1><%= @ad.title %></h1>
+	</header>
+	<%= image_tag(@ad.photo.url :medium) %>
+	
+	<article id="infos">
+		<div id="description"><%= sanitize(@ad.description) %></div>	
+		
+		<p id="price"><strong><%= format_price(@ad.price)%></strong></p>	
+		
+		<section id="user-infos">
+			<header>
+				<h1>About seller</h1>
+			</header>
+			<p><strong>Sold by :</strong> <%= "#{@ad.user.firstname} #{@ad.user.lastname}" %> </p>
+			<p><strong>City :</strong> <%= @ad.user.city %></p>
+		</section>
+	</article>
+</section>

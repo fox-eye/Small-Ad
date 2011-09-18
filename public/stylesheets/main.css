@@ -111,7 +111,7 @@ a.round_btn, a.round_btn :visited{
 	border-radius: 10px;
 	padding: 0.2em;
 	-moz-box-shadow: 0 0 5px #888;
-	-webkit-box-shadow: 0 0 5px#888;
+	-webkit-box-shadow: 0 0 5px #888;
 	box-shadow: 0 0 5px #888;
 	overflow:hidden;
 }
@@ -220,7 +220,7 @@ a.round_btn, a.round_btn :visited{
 	font-size: 0.8em;
 }
 
-/* AD LIST */
+/* Ad listing by category */
 
 #ads-list{
 	background-color: #CCCCCC;
@@ -254,6 +254,33 @@ a.round_btn, a.round_btn :visited{
 	background-color: #347454;
 }
 
+/* Ad details */
+
+#ad-details{
+	background-color: #CCCCCC;
+	overflow: hidden;
+	min-height: 100px;
+}
+
+#ad-details img{
+	float: left;
+	margin-right: 10px;
+	display: block;
+}
+#ad-details #infos{
+	float: right;
+	width: 400px;
+}
+
+#ad-details #price{
+	font-size: 1.5em;
+	color: #347454;
+	text-shadow: #222 -1px 1px 2px;
+}
+
+#ad-details #user-infos{
+	font-size: 1em;
+}
 /* footer */
 footer{
 	text-align: center;

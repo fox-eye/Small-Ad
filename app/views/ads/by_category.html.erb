@@ -3,10 +3,8 @@
 		<h1>All ads for '<%= @category.name %>' </h1>
 	</header>
 	<% if(@ads.any?)%>
-	<%= render @ads %>
+		<%= render @ads %>
 	<% else %>
-	<p>
-		No ads for this category yet !
-	</p>
+	<p>No ads for this category yet !</p>
 	<% end %>
 </section>

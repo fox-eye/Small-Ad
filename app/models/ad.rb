@@ -1,7 +1,7 @@
 class Ad < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
-  has_attached_file :photo, :styles => { :medium => "450>x200>", :thumb => "90x90#" },  :default_url => "/images/default-:style-missing.png"
+  has_attached_file :photo, :styles => { :medium => "250>x80>", :thumb => "90x90#" },  :default_url => "/images/default-:style-missing.png"
    
   attr_accessible :title, :description, :price, :category_id, :photo
   
