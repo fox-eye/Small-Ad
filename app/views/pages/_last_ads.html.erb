@@ -1,5 +1,6 @@
 <li>
 	<span class="img"><%= show_ad_img(last_ads,:thumb) %></span>
-		<%= last_ads.title %>
+		<%= last_ads.title %> -
+		<%= number_to_currency(last_ads.price, :unit => "&euro;", :locale => :fr,:format => "%n %u") %>
 		<%= link_to "take a look","#" %>
 </li>

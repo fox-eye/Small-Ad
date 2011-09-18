@@ -9,12 +9,6 @@ h1,h2,h3{
 	margin: 0;
 }
 
-h1{
-	color: #347454;
-	font-weight : normal;
-	text-transform: uppercase;
-}
-
 img {
 	border: 0;
 	display: block;
@@ -26,6 +20,12 @@ img {
 }
 
 /* generic styles */
+
+h1{
+	color: #347454;
+	font-weight : normal;
+	text-transform: uppercase;
+}
 
 input, textarea{
 	background-color: #d6deda;
@@ -58,16 +58,31 @@ textarea {
 	clear: both;
 }
 
+a{
+	font-size: 1em;
+	color: #347454;
+}
+
+a:visited{
+	color: #347454;
+}
+
+a:hover{
+	color: #65375D;
+}
+
 #global-content section header{
 	background-color: #65375D;
 	padding: 1em;
 	color: #FFFFFF;
+	margin-bottom: 0.5em;
 }
 
 #global-content section header h1{
 	color: #FFFFFF;
 	font-size: 1em;
 }
+
 
 /* btns */
 .round_btn{
@@ -81,6 +96,10 @@ textarea {
 
 .round_btn:hover{
 	background-color: #65375D;
+}
+
+a.round_btn, a.round_btn :visited{
+	color: #FFFFFF;
 }
 
 /* header */
@@ -101,7 +120,7 @@ textarea {
 	float: left;
 }
 
-/* global content */ 
+/* global content / content */ 
 #global-content{
 	padding: 1em;
 	border-top: 1px dashed #666666;
@@ -114,6 +133,12 @@ textarea {
 
 #global-content p{
 	font-size: 0.9em;
+}
+
+#content {
+	float:left;
+	overflow: hidden;
+	width: 680px;
 }
 
 /* SEARCH */
@@ -150,11 +175,11 @@ textarea {
 
 /* HOME */
 #last-ads {
-	float: right;
+	
 	background-color: #CCCCCC;
 	overflow: hidden;
-	margin-left: 3em;
 	padding: 0.5em;
+	
 }
 
 #last-ads ul{
@@ -170,6 +195,30 @@ textarea {
 
 #last-ads li:last-child{
 	border:none;
+}
+
+#last-ads a{
+	font-size: 0.8em;
+}
+
+#last-ads .img{
+	margin-bottom: 0.5em;
+}
+#categories {
+	background-color: #CCCCCC;
+	padding: 0.5em;
+	margin-right: 30px;
+	width: 220px;
+	float: left;
+}
+
+#categories h2{
+	font-size: 1.1em;
+	margin-top: 0.5em;
+}
+
+#categories a {
+	font-size: 0.8em;
 }
 
 /* footer */
@@ -221,7 +270,7 @@ footer #credits{
 /* sign up - sign in */
 
 #signup_box{
-	margin-top: 2em;
+	margin: 0.5em 0;
 	border-top: 1px solid #666666;
 	border-bottom: 1px solid #666666;
 	padding: 0.8em;

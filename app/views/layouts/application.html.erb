@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= title %></title>
-  <%= stylesheet_link_tag "main",:media => "screen" %>
-  <%= javascript_include_tag :defaults %>
-  <%= javascript_include_tag "easy-counter.js" %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
-	<div id="wrap">
-		<%= render 'layouts/header' %>
-		
-		<%= render 'layouts/search' %>
-		
-		<section id="global-content">
-			<%= yield %>
-		</section>	
-		
-		<%= render 'layouts/footer' %>
-	</div>
-	
-	<%= debug(params) if Rails.env.development? %>
-</body>
+	<head>
+		<title><%= title %></title>
+		<%= stylesheet_link_tag "main",:media => "screen" %>
+		<%= javascript_include_tag :defaults %>
+		<%= javascript_include_tag "easy-counter.js" %>
+		<%= csrf_meta_tag %>
+	</head>
+	<body>
+		<div id="wrap">
+			<%= render 'layouts/header' %>
+
+			<%= render 'layouts/search' %>
+			<section id="global-content">
+				
+				<section id="categories">
+					<header>
+						<h1>Choose a category</h1>
+					</header>
+					<% if @categories.any? %>
+						<%= show_categories @categories %>
+					<% else %>
+					<p>
+						No categories yet
+					</p>
+					<% end %>
+				</section>
+				
+				<section id="content">
+					<%= yield %>
+				</section>
+			</section>
+			<%= render 'layouts/footer' %>
+		</div>
+		<%= debug(params) if Rails.env.development? %>
+	</body>
 </html>

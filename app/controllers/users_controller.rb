@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  before_filter :get_categories
+  
   # users signup
   def new
     @title = "Please sign up and join us !"

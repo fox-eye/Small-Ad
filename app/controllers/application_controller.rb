@@ -12,5 +12,10 @@ class ApplicationController < ActionController::Base
     !current_user.nil?
   end 
   
+  def get_categories
+   # afficher les catégories et sous catégories de produit
+   @categories = Category.all
+  
+  end
   
 end

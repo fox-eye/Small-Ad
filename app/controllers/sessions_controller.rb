@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
+  before_filter :get_categories, :except => :destroy
+  
   def new
+    
   end
 
   def create

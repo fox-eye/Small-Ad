@@ -2,6 +2,7 @@ class AdsController < ApplicationController
   
   before_filter :load_ad_cat_datas, :only => [:create,:new, :edit]
   before_filter :authenticate, :except => [:show, :search]
+  before_filter :get_categories, :except => :destroy
   
   #show current user small ads
   def index
