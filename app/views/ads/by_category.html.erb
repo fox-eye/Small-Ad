@@ -1,0 +1,12 @@
+<section id="ads-list">
+	<header>
+		<h1>All ads for '<%= @category.name %>' </h1>
+	</header>
+	<% if(@ads.any?)%>
+	<%= render @ads %>
+	<% else %>
+	<p>
+		No ads for this category yet !
+	</p>
+	<% end %>
+</section>

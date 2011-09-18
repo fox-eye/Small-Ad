@@ -12,7 +12,9 @@
 			<th colspan = "2">Actions</th>
 		</tr>
 		
-		<%= render @ads %>
+		<% @ads.each do |ad| %>
+			<%= render "admin_ads", :ad => ad %> 
+		<% end %>
 		
 	</table>
 	<% else %>

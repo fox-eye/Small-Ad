@@ -1,6 +1,11 @@
-<tr>
-<td><%= image_tag(ad.photo.url :thumb) %></td>
-<td><%= ad.title %></td>
-<td><%= link_to "edit", edit_ad_path(ad) %></td>
-<td><%= link_to "delete", ad_path(ad), :method => :delete, :confirm => 'Are you sure?' %></td>
-</tr>
+<article>
+	<header>
+		<h1><%= ad.title %></h1>
+	</header>
+	<%= image_tag(ad.photo.url :thumb) %>
+	<section class="content">
+		<%= sanitize(truncate(ad.description, :length => 30)) %>
+		<strong><%= number_to_currency(ad.price, :unit => "&euro;", :locale => :fr,:format => "%n %u") %></strong>
+		<%= link_to("See details", "#") %>
+	</section>
+</article>

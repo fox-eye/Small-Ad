@@ -8,7 +8,8 @@ SmallAd::Application.routes.draw do
   root :to => "pages#index"
    
   resources :users
-  resources :ads
+  resources :ads, :except => :show
+  
   resources :sessions, :only => [:new, :create, :destroy]
   
   match "/about" => "pages#about"
@@ -21,6 +22,9 @@ SmallAd::Application.routes.draw do
   match "/my-ads" => "ads#index", :as => :my_ads
   
   match "json/get_sub_cat/:id" => "categories#get_sub_cat"
+  
+  match "/ads/by-category/:category_id" => "ads#by_category", :as => :ads_by_category
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

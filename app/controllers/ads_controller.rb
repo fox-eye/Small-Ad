@@ -40,6 +40,12 @@ class AdsController < ApplicationController
   def search
   end
   
+  def by_category
+    # get all ads for this category
+    @ads = Ad.where(:category_id => params[:category_id]).order("created_at DESC")
+    @category = Category.find(params[:category_id])
+  end
+  
   # edit the small ad
   def edit
     @ad = Ad.find(params[:id])

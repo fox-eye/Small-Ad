@@ -175,7 +175,6 @@ a.round_btn, a.round_btn :visited{
 
 /* HOME */
 #last-ads {
-	
 	background-color: #CCCCCC;
 	overflow: hidden;
 	padding: 0.5em;
@@ -219,6 +218,40 @@ a.round_btn, a.round_btn :visited{
 
 #categories a {
 	font-size: 0.8em;
+}
+
+/* AD LIST */
+
+#ads-list{
+	background-color: #CCCCCC;
+	padding-bottom: 0.5em;
+}
+
+#ads-list article{
+	margin: 0.5em 0;
+	overflow: hidden;
+	padding: 0.5em;
+}
+
+#ads-list article .content{
+	float: left;
+	margin-left: 1em;
+}
+
+#ads-list article img{
+	float: left;
+	border: 1px solid black;
+	width: 90px;
+}
+
+#ads-list article header{
+	background-color: #347454;
+	padding: 0.4em;
+}
+
+#ads-list article header h1{
+	font-size: 0.8em;
+	background-color: #347454;
 }
 
 /* footer */
