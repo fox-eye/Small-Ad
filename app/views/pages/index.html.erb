@@ -6,6 +6,19 @@
 	<p>You can now <%= link_to "add some small ads","#" %> !</p>
 <% end %>
 
+<section id="last-ads">
+	<header>
+		<h1>Last posted</h1>
+	</header>
+	<% if(@last_ads.any?)%>
+		<ul>
+			<%= render :partial => 'last_ads',:collection => @last_ads %>
+		</ul>
+	<% else %>
+		<p>No ads to display yet</p>
+	<% end %>
+</section>
+
 <% if(!signed_in?) %>
 <section id="intro">
 	<p>Small ad is a simple small ad search tool for buying and selling things.</p>

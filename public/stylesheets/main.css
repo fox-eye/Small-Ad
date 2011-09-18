@@ -58,6 +58,17 @@ textarea {
 	clear: both;
 }
 
+#global-content section header{
+	background-color: #65375D;
+	padding: 1em;
+	color: #FFFFFF;
+}
+
+#global-content section header h1{
+	color: #FFFFFF;
+	font-size: 1em;
+}
+
 /* btns */
 .round_btn{
 	-moz-border-radius: 3px;
@@ -95,6 +106,7 @@ textarea {
 	padding: 1em;
 	border-top: 1px dashed #666666;
 	margin-top: 2em;
+	overflow: hidden;
 }
 #global-content h1{
 	font-size: 1.4em;
@@ -134,6 +146,30 @@ textarea {
 
 #global-search #search_term{
 	width: 755px;
+}
+
+/* HOME */
+#last-ads {
+	float: right;
+	background-color: #CCCCCC;
+	overflow: hidden;
+	margin-left: 3em;
+	padding: 0.5em;
+}
+
+#last-ads ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#last-ads li{
+	border-bottom: 1px dashed #FFFFFF;
+	padding: 0.4em 0;
+}
+
+#last-ads li:last-child{
+	border:none;
 }
 
 /* footer */

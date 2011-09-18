@@ -70,7 +70,7 @@ end
     
     ad_params = {
               :title => Faker::Lorem.words(random_in_range(2,5)).join(" "),
-              :description => Faker::Lorem.sentences(random_in_range(2,4)).join("."),
+              :description => Faker::Lorem.sentences(random_in_range(2,4)).join(""),
               :price => random_in_range(10,250).to_f,
               :category_id => subcategory_id
              }
