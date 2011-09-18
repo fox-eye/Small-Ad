@@ -63,10 +63,10 @@ end
   5.times do
     #choisir une sous categorie au hasard dans une catégorie choisie au hasard
     subcategories = rand_sub_cat(categories)
-    subcategory_name = categories[rand(categories.size)]
+    subcategory_name = subcategories[rand(subcategories.size)]
     
     # trouver l'id de la sous catégorie
-    subcategory_id = Category.find_by_name(subcategory_name)
+    subcategory_id = Category.find_by_name(subcategory_name).id
     
     ad_params = {
               :title => Faker::Lorem.words(random_in_range(2,5)).join(" "),
