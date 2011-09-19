@@ -1,7 +1,7 @@
 class AdsController < ApplicationController
   
   before_filter :load_ad_cat_datas, :only => [:create,:new, :edit]
-  before_filter :authenticate, :except => [:show, :search]
+  before_filter :authenticate, :except => [:show, :search, :by_category]
   before_filter :get_categories, :except => :destroy
   
   #show current user small ads
@@ -37,8 +37,10 @@ class AdsController < ApplicationController
     Ad.find(params[:id]).destroy
     redirect_to my_ads_path, :flash => {:success => "This ad has been destroyed !"}
   end
-
+  
+   # search ad (get)
   def search
+    @ads = Ad.where("title like :title OR description like :description",:title => "%"+params[:search_term]+"%",:description => "%"+params[:search_term]+"%")
   end
   
   def by_category

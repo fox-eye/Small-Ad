@@ -1,2 +1,10 @@
-<h1>Ads#search</h1>
-<p>Find me in app/views/ads/search.html.erb</p>
+<section id="search-ad-list">
+	<header>
+		<h1>Searching for : <%= params[:search_term] %> </h1>
+	</header>
+	<% if @ads.any? %>
+		<%= render @ads %>
+	<% else %>
+	<p>Nothing found for this search ! Try again with something else !
+	<% end %>
+</section>
