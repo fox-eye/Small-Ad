@@ -18,3 +18,41 @@
 		</section>
 	</article>
 </section>
+
+<section id="contact-seller">
+	<header>
+		<h1>Interested ? Contact the seller</h1>
+	</header>	
+	
+	<%= render "shared/flash", :flash => flash %>
+	
+	<%= form_for @contact do |f| %>
+	
+	<%= render 'shared/errors', :object => f.object %>
+	
+	<div class="field">
+		<%= f.label :email, "Your email address" %><br />
+		<%= f.text_field :email %>					
+	</div>
+	
+	<div class="field">
+		<%= f.label :firstname, "Your firstname" %><br />
+		<%= f.text_field :firstname %>					
+	</div>
+	
+	<div class="field">
+		<%= f.label :lastname, "Your lastname" %><br />
+		<%= f.text_field :lastname %>					
+	</div>
+	
+	<div class="field">
+		<%= f.label :comment, "Your comment" %><br />
+		<%= f.text_area :comment, :size => "50x7" %>					
+	</div>
+	
+	<%= hidden_field_tag(:ad_id, @ad.id) %>		
+	<div class="actions">
+		<%= f.submit "Send" %>
+	</div>
+	<% end %>
+</section>

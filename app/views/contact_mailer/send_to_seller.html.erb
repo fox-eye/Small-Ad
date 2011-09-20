@@ -1,0 +1,15 @@
+<p>Dear <%= @seller.firstname %> <%= @seller.lastname %>, </p>
+
+<p>
+	The user <%= @from_firstname %> <%= @from_lastname %> seems to be interested by your ad
+	<%= link_to  @ad_title, ad_url(@ad_id,:host => "smallad.com") %>
+</p>
+
+<p>He left you the following message : </p>
+
+<p><%= @from_comment %></p>
+	
+<p>If you want to answer, please just reply to this message</p>
+
+<p>The small ad team</p>	
+

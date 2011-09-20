@@ -16,6 +16,9 @@ class AdsController < ApplicationController
   
   def show
     @ad = Ad.find(params[:id])
+    
+    # contact seller form
+    @contact = Contact.new
   end
   
   # create a new ad for current user

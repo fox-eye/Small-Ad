@@ -1,4 +1,12 @@
 SmallAd::Application.routes.draw do
+  get "contacts/new"
+
+  get "contacts/create"
+
+  get "contact/new"
+
+  get "contact/create"
+
   get "categories/show"
 
   get "categories/get_sub_cat"
@@ -14,6 +22,8 @@ SmallAd::Application.routes.draw do
   end
   
   resources :sessions, :only => [:new, :create, :destroy]
+  
+  resource :contacts, :only => :create
   
   match "/about" => "pages#about"
   match "/terms" => "pages#terms"

@@ -280,6 +280,12 @@ a.round_btn, a.round_btn :visited{
 #ad-details #user-infos{
 	font-size: 1em;
 }
+
+/* contact seller */
+#contact-seller{
+	margin-top: 1em;
+}
+
 /* footer */
 footer{
 	text-align: center;
@@ -396,18 +402,18 @@ footer #credits{
 }
 
 /* validations */
-#errors-box{
+#errors-box, section #errors-box{
 	border: 1px dashed #666666;
 	margin-bottom: 1em;
 }
 
-#errors-box header{
+#errors-box header, section #errors-box header{
 	background-color: #d52b2b;
-	padding: 0.9em;
+	padding: 0.4em;
 }
 
-#errors-box header h1{
-	font-size: 1em;
+#errors-box header h1, section #errors-box header h1{
+	font-size: 0.8em;
 	margin: 0;
 	color: #FFFFFF;
 }
