@@ -269,6 +269,7 @@ a.round_btn, a.round_btn :visited{
 #ad-details #infos{
 	float: right;
 	width: 400px;
+	padding-right: 1.2em;
 }
 
 #ad-details #price{

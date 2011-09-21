@@ -43,12 +43,14 @@ class AdsController < ApplicationController
   
    # search ad (get)
   def search
-    @ads = Ad.where("title like :title OR description like :description",:title => "%"+params[:search_term]+"%",:description => "%"+params[:search_term]+"%")
+    @ads = Ad.where("title like :title OR description like :description",
+                    :title => "%"+params[:search_term]+"%",
+                    :description => "%"+params[:search_term]+"%").paginate(:page => params[:page],:per_page => 10)
   end
   
   def by_category
     # get all ads for this category
-    @ads = Ad.where(:category_id => params[:category_id]).order("created_at DESC")
+    @ads = Ad.where(:category_id => params[:category_id]).order("created_at DESC").paginate(:page => params[:page],:per_page => 10)
     @category = Category.find(params[:category_id])
   end
   

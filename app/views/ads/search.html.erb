@@ -1,3 +1,4 @@
+<%=will_paginate @ads %>
 <section id="search-ad-list">
 	<header>
 		<h1>Searching for : <%= params[:search_term] %> </h1>
@@ -8,3 +9,5 @@
 	<p>Nothing found for this search ! Try again with something else !
 	<% end %>
 </section>
+
+<%=will_paginate @ads %>

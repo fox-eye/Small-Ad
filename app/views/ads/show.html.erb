@@ -5,7 +5,7 @@
 	<%= image_tag(@ad.photo.url :medium) %>
 	
 	<article id="infos">
-		<div id="description"><%= sanitize(@ad.description) %></div>	
+		<div id="description"><%= simple_format(@ad.description,:sanitize => true) %></div>	
 		
 		<p id="price"><strong><%= format_price(@ad.price)%></strong></p>	
 		

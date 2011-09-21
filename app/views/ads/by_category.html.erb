@@ -1,3 +1,4 @@
+<%= will_paginate @ads %>
 <section id="ads-list">
 	<header>
 		<h1>All ads for '<%= @category.name %>' </h1>
@@ -8,3 +9,5 @@
 	<p>No ads for this category yet !</p>
 	<% end %>
 </section>
+
+<%= will_paginate @ads %>

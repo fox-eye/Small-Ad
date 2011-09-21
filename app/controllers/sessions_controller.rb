@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       flash.now[:error] = "Wrong user / email couple. Please try again"
       render 'new'
     else
-      session[:user_id] = user.id
+      sign_in(user)
       redirect_to(root_path, :flash => {:success => "Your are successfully signed in !"})
     end
 

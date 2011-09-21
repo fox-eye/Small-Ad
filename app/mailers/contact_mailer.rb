@@ -1,5 +1,5 @@
 class ContactMailer < ActionMailer::Base
-  #default :from => "from@example.com"
+  default :from => "noreply@smallad.com"
   
   def send_to_seller(seller,from,ad)
     @seller = seller
@@ -10,9 +10,9 @@ class ContactMailer < ActionMailer::Base
     @ad_id = ad.id
     
     mail(
-          :to => seller.email, 
-          :from => "#{from[:firstname]+' '+from[:lastname]}<#{from[:email]}>",
-          :subject => "Small ad : someone is interested by your ad '#{ad.title}'"
+          :to => "#{seller.firstname} #{seller.lastname}<#{seller.email}>", 
+          :subject => "Small ad : someone is interested by your ad '#{ad.title}'",
+          :reply_to => from[:email]
          )
   end
 end
